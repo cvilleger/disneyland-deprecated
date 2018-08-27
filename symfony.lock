@@ -56,6 +56,9 @@
             "ref": "fb7e19da7f013d0d422fa9bce16f5c510e27609b"
         }
     },
+    "symfony/browser-kit": {
+        "version": "v4.1.3"
+    },
     "symfony/cache": {
         "version": "v4.1.3"
     },
@@ -71,10 +74,16 @@
             "ref": "e3868d2f4a5104f19f844fe551099a00c6562527"
         }
     },
+    "symfony/css-selector": {
+        "version": "v4.1.3"
+    },
     "symfony/debug": {
         "version": "v4.1.3"
     },
     "symfony/dependency-injection": {
+        "version": "v4.1.3"
+    },
+    "symfony/dom-crawler": {
         "version": "v4.1.3"
     },
     "symfony/dotenv": {
@@ -122,8 +131,23 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/phpunit-bridge": {
+        "version": "4.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.1",
+            "ref": "1a47f76dcd9d5d4da1fab54fb15450bae3704c5e"
+        }
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.9.0"
+    },
+    "symfony/polyfill-php72": {
+        "version": "v1.9.0"
+    },
+    "symfony/profiler-pack": {
+        "version": "v1.0.3"
     },
     "symfony/routing": {
         "version": "4.0",
@@ -133,6 +157,9 @@
             "version": "4.0",
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
         }
+    },
+    "symfony/stopwatch": {
+        "version": "v4.1.3"
     },
     "symfony/twig-bridge": {
         "version": "v4.1.3"
@@ -144,6 +171,18 @@
             "branch": "master",
             "version": "3.3",
             "ref": "f75ac166398e107796ca94cc57fa1edaa06ec47f"
+        }
+    },
+    "symfony/var-dumper": {
+        "version": "v4.1.3"
+    },
+    "symfony/web-profiler-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bdfa1a95f6b2e677ab985cd1af2eae35d62e0f6"
         }
     },
     "symfony/yaml": {
