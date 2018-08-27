@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/cvilleger/disneyland.svg?branch=master)](https://travis-ci.com/cvilleger/disneyland)
+
 ### Install
 
 **1.** Copy `.env.dist` to `.env`
