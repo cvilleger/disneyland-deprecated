@@ -5,6 +5,9 @@ services:
 
 language: php
 
+php:
+    - nightly
+
 before_install:
     - cp .env.dist .env
     - docker-compose up -d
