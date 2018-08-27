@@ -21,7 +21,7 @@ docker-compose up -d
 **4.** Install dependencies
 
 ```
-docker-compose exec --user=application web composer install
+docker-compose exec web composer install
 ```
 
 **5.** Drop, create and update your database

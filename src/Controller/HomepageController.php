@@ -2,13 +2,12 @@
 
 namespace App\Controller;
 
+use App\Client\ParkClient;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 
 class HomepageController extends AbstractController
 {
-
-    public function index()
+    public function index(ParkClient $parkClient)
     {
         return $this->render('homepage/index.html.twig');
     }
