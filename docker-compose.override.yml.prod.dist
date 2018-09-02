@@ -6,10 +6,6 @@ services:
     ports:
       - "80:80"
 
-  database:
-    environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: 1
-
 #  phpmyadmin:
 #      image: phpmyadmin/phpmyadmin
 #      depends_on:
