@@ -19,3 +19,6 @@ services:
       image: bitnami/mariadb:10.2
       volumes:
           - ./docker/database:/bitnami
+      environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: mydatabase
