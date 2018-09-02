@@ -4,6 +4,33 @@
 
 {% block body %}
 <div class="container">
-    <h1>Hello</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Time</th>
+            <th scope="col">hasFastpass</th>
+            <th scope="col">status</th>
+            <th scope="col">isSinglerider</th>
+            <th scope="col">isStudio</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for attractionTime in attractionTimes %}
+            <tr>
+                <td>{{ attractionTime.attraction.name }}</td>
+                <td>{{ attractionTime.waitTime }}</td>
+                <td>{{ attractionTime.hasFastpass }}</td>
+                <td>{{ attractionTime.status }}</td>
+                <td>{{ attractionTime.isSinglerider }}</td>
+                <td>{{ attractionTime.attraction.isStudio }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td>No data</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}

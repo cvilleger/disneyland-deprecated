@@ -13,13 +13,13 @@ services:
       environment:
           WEB_DOCUMENT_ROOT: /app/public
           WEB_DOCUMENT_INDEX: index.php
-          PHP_DATE_TIMEZONE: "UTC"
+          PHP_DATE_TIMEZONE: "Europe/Paris"
           PHP_DISPLAY_ERRORS: 1
 
   database:
-      image: mariadb:10.3
+      image: bitnami/mariadb:10.2
       volumes:
-          - ./docker/database:/var/lib/mysql
+          - ./docker/database:/bitnami
       environment:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: mydatabase
+          MARIADB_ROOT_PASSWORD: root
+          MARIADB_DATABASE: mydatabase

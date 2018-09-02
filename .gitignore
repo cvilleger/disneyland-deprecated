@@ -7,9 +7,11 @@
 ###< symfony/framework-bundle ###
 
 docker-compose.override.yml
-/docker/database
+/docker/database/*
+!/docker/database/.gitkeep
 
 ###> symfony/phpunit-bridge ###
 .phpunit
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
+
