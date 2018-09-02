@@ -2,9 +2,13 @@ version: "3"
 
 services:
 
-  web:
-      ports:
-          - "80:80"
+    web:
+        ports:
+            - "80:80"
+
+  database:
+        environment:
+            MYSQL_RANDOM_ROOT_PASSWORD: 1
 
 #  phpmyadmin:
 #      image: phpmyadmin/phpmyadmin

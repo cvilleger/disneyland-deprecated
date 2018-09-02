@@ -14,12 +14,8 @@ services:
           WEB_DOCUMENT_ROOT: /app/public
           WEB_DOCUMENT_INDEX: index.php
           PHP_DATE_TIMEZONE: "Europe/Paris"
-          PHP_DISPLAY_ERRORS: 1
 
   database:
       image: bitnami/mariadb:10.2
       volumes:
           - ./docker/database:/bitnami
-      environment:
-          MARIADB_ROOT_PASSWORD: root
-          MARIADB_DATABASE: mydatabase
