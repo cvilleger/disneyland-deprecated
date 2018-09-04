@@ -16,7 +16,7 @@ services:
           PHP_DATE_TIMEZONE: "Europe/Paris"
 
   database:
-      image: mysql:5.7
+      image: percona:5.7
       volumes:
           - ./docker/mydatabase:/var/lib/mysql
       environment:
