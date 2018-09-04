@@ -2,15 +2,17 @@
 
 namespace App\Controller;
 
-use App\Client\ParkClient;
+use App\Repository\AttractionTimeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Cache\Simple\FilesystemCache;
 
 class HomepageController extends AbstractController
 {
-    public function index(ParkClient $parkClient)
+    public function index(AttractionTimeRepository $attractionTimeRepository)
     {
+        $cache = new FilesystemCache();
         return $this->render('homepage/index.html.twig', [
-            'attractionTimes' => $parkClient->getData()
+            'attractionTimes' => $cache->has('app.data') ? $cache->get('app.data') : $attractionTimeRepository->findLast()
         ]);
     }
 }
