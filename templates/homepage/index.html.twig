@@ -3,34 +3,46 @@
 {% block title %}Hello !{% endblock %}
 
 {% block body %}
-<div class="container">
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Time</th>
-            <th scope="col">hasFastpass</th>
-            <th scope="col">status</th>
-            <th scope="col">isSinglerider</th>
-            <th scope="col">isStudio</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for attractionTime in attractionTimes %}
+    <div class="container">
+        <div id="cont_NzcxMTF8NXwzfDF8MXxGRkZGRkZ8MXxGRkZGRkZ8Y3wx">
+            <div id="spa_NzcxMTF8NXwzfDF8MXxGRkZGRkZ8MXxGRkZGRkZ8Y3wx">
+                <a
+                    id="a_NzcxMTF8NXwzfDF8MXxGRkZGRkZ8MXxGRkZGRkZ8Y3wx"
+                    href="http://www.meteocity.com/france/chessy_v77111/" target="_blank"
+                    style="color:#333;text-decoration:none;">Météo Chessy - Marne-la-Vallée - Parcs Disneyland
+                </a>
+            </div>
+            <script type="text/javascript"
+                    src="http://widget.meteocity.com/js/NzcxMTF8NXwzfDF8MXxGRkZGRkZ8MXxGRkZGRkZ8Y3wx"></script>
+        </div>
+        <table id="disneyTable" class="table table-striped table-bordered" style="width:100%">
+            <thead>
             <tr>
-                <td>{{ attractionTime.attraction.name }}</td>
-                <td data-toggle="tooltip" data-placement="left" title="Last updated {{ attractionTime.createdAt|date }}">{{ attractionTime.waitTime }}</td>
-                <td>{{ attractionTime.hasFastpass }}</td>
-                <td>{{ attractionTime.status }}</td>
-                <td>{{ attractionTime.isSinglerider }}</td>
-                <td>{{ attractionTime.attraction.isStudio }}</td>
+                <th scope="col">Name</th>
+                <th scope="col">Time</th>
+                <th scope="col">hasFastpass</th>
+                <th scope="col">status</th>
+                <th scope="col">isSinglerider</th>
+                <th scope="col">isStudio</th>
             </tr>
-        {% else %}
-            <tr>
-                <td>No data</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+            {% for attractionTime in attractionTimes %}
+                <tr>
+                    <td>{{ attractionTime.attraction.name }}</td>
+                    <td data-toggle="tooltip" data-placement="left"
+                        title="Last updated {{ attractionTime.createdAt|date }}">{{ attractionTime.waitTime }}</td>
+                    <td>{{ attractionTime.hasFastpass }}</td>
+                    <td>{{ attractionTime.status }}</td>
+                    <td>{{ attractionTime.isSinglerider }}</td>
+                    <td>{{ attractionTime.attraction.isStudio }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>No data</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
