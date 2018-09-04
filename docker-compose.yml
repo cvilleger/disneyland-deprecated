@@ -16,9 +16,9 @@ services:
           PHP_DATE_TIMEZONE: "Europe/Paris"
 
   database:
-      image: bitnami/mariadb:10.2
+      image: mysql:5.7
       volumes:
-          - ./docker/database:/bitnami
+          - ./docker/mydatabase:/var/lib/mysql
       environment:
-          MARIADB_ROOT_PASSWORD: root
-          MARIADB_DATABASE: mydatabase
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: mydatabase

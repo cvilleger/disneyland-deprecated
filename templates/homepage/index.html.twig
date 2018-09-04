@@ -19,7 +19,7 @@
         {% for attractionTime in attractionTimes %}
             <tr>
                 <td>{{ attractionTime.attraction.name }}</td>
-                <td>{{ attractionTime.waitTime }}</td>
+                <td data-toggle="tooltip" data-placement="left" title="Last updated {{ attractionTime.createdAt|date }}">{{ attractionTime.waitTime }}</td>
                 <td>{{ attractionTime.hasFastpass }}</td>
                 <td>{{ attractionTime.status }}</td>
                 <td>{{ attractionTime.isSinglerider }}</td>
