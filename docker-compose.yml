@@ -16,9 +16,9 @@ services:
           PHP_DATE_TIMEZONE: "Europe/Paris"
 
   database:
-      image: mysql:5.7
+      image: bitnami/mysql:5.7
       volumes:
-          - ./docker:/var/lib/mysql
+          - ./docker:/bitnami
       environment:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: app_database
