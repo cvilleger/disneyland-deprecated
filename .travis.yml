@@ -25,5 +25,5 @@ after_script:
 
 deploy:
     provider: gae
-    keyfile: "keyfile.json"
-    project: "park-queue-times"
+    keyfile: keyfile.json
+    project: park-queue-times
