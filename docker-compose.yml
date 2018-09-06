@@ -12,7 +12,6 @@ services:
       env_file: .env
       environment:
           WEB_DOCUMENT_ROOT: /app/public
-          WEB_DOCUMENT_INDEX: index.php
           PHP_DATE_TIMEZONE: "Europe/Paris"
 
   database:
