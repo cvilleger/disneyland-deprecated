@@ -19,7 +19,6 @@ class ParkClient
     private $cache;
     private $entityManager;
     private $attractionRepository;
-    private $attractionTimeRepository;
 
     public function __construct(
         string $appAuthorizationUrl,
@@ -27,8 +26,7 @@ class ParkClient
         string $appDisney1Url,
         string $appDisney2Url,
         EntityManagerInterface $entityManager,
-        AttractionRepository $attractionRepository,
-        AttractionTimeRepository $attractionTimeRepository
+        AttractionRepository $attractionRepository
     )
     {
         $this->appAuthorizationUrl = $appAuthorizationUrl;
@@ -39,16 +37,6 @@ class ParkClient
         $this->cache = new FilesystemCache();
         $this->entityManager = $entityManager;
         $this->attractionRepository = $attractionRepository;
-        $this->attractionTimeRepository = $attractionTimeRepository;
-    }
-
-    public function getData(): array
-    {
-        if ($this->cache->has('app.data')) {
-            return $this->cache->get('app.data');
-        }
-
-        return $this->attractionTimeRepository->findLast();
     }
 
     public function refreshAndSave()
