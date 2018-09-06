@@ -9,6 +9,7 @@ final class Version20180902120938 extends AbstractMigration
 {
     public function up(Schema $schema) : void
     {
+        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
         $sql = "INSERT INTO `attraction` (`ref`, `name`, `is_studio`) VALUES 
                     ('P1AA00', 'Adventure Isle', '0'), 
                     ('P1AA01', 'La Cabane des Robinson', '0'),
@@ -65,11 +66,9 @@ final class Version20180902120938 extends AbstractMigration
                     ('P2ZA02', 'The Twilight Zone Tower of Terror', '1')
                 ";
         $this->addSql($sql);
-        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
     }
 
     public function down(Schema $schema) : void
     {
-        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
     }
 }

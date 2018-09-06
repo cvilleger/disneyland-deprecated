@@ -27,10 +27,10 @@ class DisneyCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $io = new SymfonyStyle($input, $output);
+        $symfonyStyle = new SymfonyStyle($input, $output);
 
         $this->parkClient->refreshAndSave();
 
-        $io->success('Sucess');
+        $symfonyStyle->success('Sucess');
     }
 }
