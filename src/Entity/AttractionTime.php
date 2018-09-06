@@ -37,7 +37,7 @@ class AttractionTime
     private $isSinglerider;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Attraction", inversedBy="attractionTimes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Attraction", inversedBy="attractionTimes", fetch="EAGER")
      * @ORM\JoinColumn(nullable=false)
      */
     private $attraction;
