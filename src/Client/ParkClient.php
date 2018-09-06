@@ -56,7 +56,6 @@ class ParkClient
         $entries = [];
         foreach ([$this->appDisney1Url, $this->appDisney2Url] as $disneyParcUrl){
             $response = $this->client->get($disneyParcUrl, [
-                'verify' => false,
                 'headers' => ['Authorization' => 'Bearer ' . $this->getToken()]
             ]);
 
@@ -93,10 +92,7 @@ class ParkClient
     {
         if (!$this->cache->has('app.token')) {
             $authResponse = $this->client->post($this->appAuthorizationUrl, [
-                'verify' => false,
-                'headers' => [
-                    'Content-Type' => 'application/x-www-form-urlencoded'
-                ],
+                'headers' => ['Content-Type' => 'application/x-www-form-urlencoded'],
                 'body' => $this->appAuthorizationBody
             ]);
             $json = json_decode($authResponse->getBody()->getContents());
