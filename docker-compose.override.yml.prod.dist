@@ -8,3 +8,4 @@ services:
             APP_ENV: prod
         ports:
             - "80:80"
+            - "443:443"
