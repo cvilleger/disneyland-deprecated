@@ -28,33 +28,4 @@ class AttractionTimeRepository extends ServiceEntityRepository
 
         return $this->findBy(['created_at' => $lastAttractionTime->getCreatedAt()]);
     }
-
-//    /**
-//     * @return AttractionTime[] Returns an array of AttractionTime objects
-//     */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?AttractionTime
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
