@@ -19,3 +19,7 @@ script:
 
 after_script:
     - php vendor/bin/codacycoverage clover build/coverage/xml
+
+deploy:
+    provider: script
+    script: bash scripts/deploy.sh
