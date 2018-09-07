@@ -4,8 +4,18 @@ services:
 
     web:
         image: webdevops/php-nginx:7.2
+        depends_on:
+            - database
         environment:
             APP_ENV: prod
         ports:
             - "80:80"
             - "443:443"
+
+    database:
+        image: mysql:5.7
+        volumes:
+            - ./docker:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: app_database

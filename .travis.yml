@@ -9,13 +9,10 @@ php:
     - 7.2
 
 before_install:
-    - cp .env.dist .env
-    - docker-compose up -d --force-recreate --remove-orphans
+    - cp .env.test.dist .env
+    - docker-compose up -d
     - docker-compose exec web composer install --no-interaction --prefer-dist --optimize-autoloader
-    - docker-compose ps
-    - docker-compose exec web php bin/console doctrine:database:drop --if-exists --force
-    - docker-compose exec web php bin/console doctrine:database:create
-    - docker-compose exec web php bin/console doctrine:migration:migrate -q
+    - docker-compose exec web php bin/console d:s:u --force
 
 script:
     - docker-compose exec web php bin/phpunit --coverage-clover build/coverage/xml

@@ -3,8 +3,18 @@ version: "3"
 services:
 
     web:
+        depends_on:
+            - database
         ports:
             - "80:80"
+
+    database:
+        image: mysql:5.7
+        volumes:
+            - ./docker:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: app_database
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
