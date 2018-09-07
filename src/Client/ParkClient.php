@@ -17,7 +17,9 @@ class ParkClient
     private $appDisney2Url;
     private $client;
     private $cache;
+    /** @var EntityManagerInterface **/
     private $entityManager;
+    /** @var AttractionRepository **/
     private $attractionRepository;
 
     public function __construct(
@@ -39,7 +41,7 @@ class ParkClient
         $this->attractionRepository = $attractionRepository;
     }
 
-    public function refreshAndSave()
+    public function refreshAndSave(): void
     {
         $entries = [];
         foreach ([$this->appDisney1Url, $this->appDisney2Url] as $disneyParcUrl){
