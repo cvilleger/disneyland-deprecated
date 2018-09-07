@@ -15,7 +15,7 @@ services:
           PHP_DATE_TIMEZONE: "Europe/Paris"
 
   database:
-      image: mysql:5.7
+      image: wangxian/alpine-mysql
       volumes:
           - ./docker:/var/lib/mysql
       environment:
