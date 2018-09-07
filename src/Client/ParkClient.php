@@ -39,7 +39,7 @@ class ParkClient
         $this->attractionRepository = $attractionRepository;
     }
 
-    public function refreshAndSave()
+    public function refreshAndSave(): void
     {
         $entries = [];
         foreach ([$this->appDisney1Url, $this->appDisney2Url] as $disneyParcUrl){
