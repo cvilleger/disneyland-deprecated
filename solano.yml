@@ -1,0 +1,7 @@
+system:
+  docker: true
+
+tests:
+  - "docker ps"
+  - "composer -v"
+  - "php -v"
