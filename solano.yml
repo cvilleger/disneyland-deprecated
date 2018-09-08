@@ -1,6 +1,11 @@
 system:
   docker: true
 
+hooks:
+  pre_setup: ./scripts/solano-pre_setup.sh
+  worker_setup: ./scripts/solano-worker_setup.sh
+  post_worker: ./scripts/solano-post_worker.s
+
 tests:
   - "docker ps"
   - "composer -v"
