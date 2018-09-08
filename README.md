@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/cvilleger/disneyland.svg?branch=master)](https://travis-ci.com/cvilleger/disneyland)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b47de39978d5415a92f481a97d26212a)](https://www.codacy.com/app/cvilleger/disneyland?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cvilleger/disneyland&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/b47de39978d5415a92f481a97d26212a)](https://www.codacy.com/app/cvilleger/disneyland?utm_source=github.com&utm_medium=referral&utm_content=cvilleger/disneyland&utm_campaign=Badge_Coverage)
 
 ### Install
 

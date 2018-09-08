@@ -3,6 +3,12 @@ sudo: required
 services:
     - docker
 
+addons:
+    sonarcloud:
+        organization: "cvilleger-github"
+        token:
+            secure: $SONAR_TOKEN
+
 language: php
 
 php:
@@ -17,10 +23,11 @@ before_install:
 script:
     - docker-compose exec web php bin/phpunit --coverage-clover build/coverage/xml
 
-after_script:
-    - php vendor/bin/codacycoverage clover build/coverage/xml
-
 deploy:
     provider: script
     script: bash scripts/deploy.sh
     skip_cleanup: true
+
+after_script:
+    - php vendor/bin/codacycoverage clover build/coverage/xml
+    - sonar-scanner
