@@ -10,8 +10,6 @@
 [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Park-Queue-Times&metric=code_smells)](https://sonarcloud.io/dashboard?id=Park-Queue-Times)
 [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Park-Queue-Times&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=Park-Queue-Times)
 [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Park-Queue-Times&metric=sqale_index)](https://sonarcloud.io/dashboard?id=Park-Queue-Times)
-
-[![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Park-Queue-Times&metric=coverage)](https://sonarcloud.io/dashboard?id=Park-Queue-Times)
 [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Park-Queue-Times&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=Park-Queue-Times)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b47de39978d5415a92f481a97d26212a)](https://www.codacy.com/app/cvilleger/disneyland?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cvilleger/disneyland&amp;utm_campaign=Badge_Grade)

@@ -4,10 +4,9 @@ namespace App\Client;
 
 use App\Entity\AttractionTime;
 use App\Repository\AttractionRepository;
-use App\Repository\AttractionTimeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use GuzzleHttp\Client;
-use Symfony\Component\Cache\Simple\FilesystemCache;
+use Symfony\Component\Cache\Simple\ApcuCache;
 
 class ParkClient
 {
@@ -34,7 +33,7 @@ class ParkClient
         $this->appDisney1Url = $appDisney1Url;
         $this->appDisney2Url = $appDisney2Url;
         $this->client = new Client();
-        $this->cache = new FilesystemCache();
+        $this->cache = new ApcuCache();
         $this->entityManager = $entityManager;
         $this->attractionRepository = $attractionRepository;
     }
