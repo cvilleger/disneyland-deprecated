@@ -1,7 +1,9 @@
-sudo: required
+language: php
 
-services:
-    - docker
+php:
+    - 7.1
+    - 7.2
+    - nightly
 
 addons:
     sonarcloud:
@@ -9,25 +11,22 @@ addons:
         token:
             secure: $SONAR_TOKEN
 
-language: php
-
-php:
-    - 7.2
-
 before_install:
-    - cp .env.test.dist .env
-    - docker-compose up -d
-    - docker-compose exec web composer install --no-interaction --prefer-dist --optimize-autoloader
-    - docker-compose exec web php bin/console d:s:u --force
+    - composer install --no-interaction --optimize-autoloader
+    - php bin/console doctrine:schema:update --force
 
 script:
-    - docker-compose exec web php bin/phpunit --coverage-clover build/coverage/xml
+    - php bin/phpunit --coverage-clover build/coverage/xml
+
+after_script:
+    - php vendor/bin/codacycoverage clover build/coverage/xml
+    - sonar-scanner
 
 deploy:
     provider: script
     script: bash scripts/deploy.sh
     skip_cleanup: true
 
-after_script:
-    - php vendor/bin/codacycoverage clover build/coverage/xml
-    - sonar-scanner
+matrix:
+    allow_failures:
+        - php: nightly
