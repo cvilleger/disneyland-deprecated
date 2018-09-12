@@ -1,7 +1,6 @@
 language: php
 
 php:
-    - 7.1
     - 7.2
     - nightly
 
@@ -12,6 +11,7 @@ addons:
             secure: $SONAR_TOKEN
 
 before_install:
+    - cp .env.test.dist .env
     - composer install --no-interaction --optimize-autoloader
     - php bin/console doctrine:schema:update --force
 
