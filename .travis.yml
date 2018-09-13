@@ -16,7 +16,7 @@ before_install:
     - php bin/console doctrine:schema:update --force
 
 script:
-    - php bin/phpunit --coverage-clover build/coverage/xml
+    - php bin/phpunit -v --coverage-clover build/coverage/xml
 
 after_script:
     - php vendor/bin/codacycoverage clover build/coverage/xml
