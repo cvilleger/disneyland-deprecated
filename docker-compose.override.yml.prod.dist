@@ -8,7 +8,7 @@ services:
             - database
         environment:
             APP_ENV: prod
-            DATABASE_URL=mysql://root:root@database:3306/app_database
+            DATABASE_URL: mysql://root:root@database:3306/app_database
         ports:
             - "80:80"
             - "443:443"
