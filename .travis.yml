@@ -16,20 +16,11 @@ before_install:
     - php bin/console doctrine:schema:update --force
 
 script:
-    - php bin/phpunit --coverage-clover ./build/coverage/xml --coverage-html ./build/pages
+    - php bin/phpunit --coverage-clover ./build/coverage/xml
 
 after_script:
     - php vendor/bin/codacycoverage clover ./build/coverage/xml
     - sonar-scanner
-
-deploy:
-    provider: pages
-    skip-cleanup: true
-    github-token: $GITHUB_TOKEN
-    local-dir: ./build/pages
-    committer-from-gh: cvilleger
-    on:
-        branch: master
 
 matrix:
     allow_failures:
