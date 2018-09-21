@@ -1,12 +1,8 @@
 FROM webdevops/php-nginx:7.2
 
 COPY . /app
-
 WORKDIR /app
 
-ENV WEB_DOCUMENT_ROOT=/app/public \
-    PHP_DATE_TIMEZONE=Europe/Paris \
-    APP_ENV=dev \
-    DATABASE_URL=mysql://root:root@localhost:3306/app_database
+RUN composer install --no-ansi --no-dev --no-interaction --no-progress --optimize-autoloader
 
-EXPOSE 80 443
+EXPOSE 443
