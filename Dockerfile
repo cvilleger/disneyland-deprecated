@@ -3,6 +3,7 @@ FROM webdevops/php-nginx:7.2
 COPY . /app
 WORKDIR /app
 
-RUN composer install --no-ansi --no-dev --no-interaction --no-progress --optimize-autoloader
+ENV APP_ENV=prod
+RUN composer install --profile --no-interaction --no-progress --no-suggest --no-dev -o
 
 EXPOSE 443

@@ -4,6 +4,10 @@ php:
     - 7.2
     - nightly
 
+matrix:
+    allow_failures:
+        - php: nightly
+
 addons:
     sonarcloud:
         organization: "cvilleger-github"
@@ -21,7 +25,3 @@ script:
 after_script:
     - php vendor/bin/codacycoverage clover ./build/coverage/xml
     - sonar-scanner
-
-matrix:
-    allow_failures:
-        - php: nightly
