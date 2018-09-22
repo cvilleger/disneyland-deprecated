@@ -3,20 +3,13 @@ version: "3"
 services:
 
     web:
-        image: webdevops/php-nginx:7.2
-        depends_on:
-            - database
+        image: cvilleger/disneyland
         environment:
             APP_ENV: prod
             DATABASE_URL: mysql://root:root@database:3306/app_database
+            APP_AUTHORIZATION_URL:
+            APP_AUTHORIZATION_BODY:
+            APP_DISNEY1_URL:
+            APP_DISNEY2_URL:
         ports:
-            - "80:80"
             - "443:443"
-
-    database:
-        image: mysql:5.7
-        volumes:
-            - ./docker:/var/lib/mysql
-        environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: app_database

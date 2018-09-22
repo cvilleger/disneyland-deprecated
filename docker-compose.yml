@@ -2,11 +2,19 @@ version: "3"
 
 services:
 
-  web:
-      image: webdevops/php-nginx-dev:7.2
-      volumes:
-          - ./:/app
-      working_dir: /app
-      environment:
-          WEB_DOCUMENT_ROOT: /app/public
-          PHP_DATE_TIMEZONE: "Europe/Paris"
+    web:
+        image: webdevops/php-nginx-dev:7.2
+        depends_on:
+            - database
+        working_dir: /app
+        environment:
+            WEB_DOCUMENT_ROOT: /app/public
+            PHP_DATE_TIMEZONE: "Europe/Paris"
+
+    database:
+        image: mysql:5.7
+        volumes:
+            - ./docker:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: app_database
